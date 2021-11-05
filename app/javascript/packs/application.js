@@ -8,6 +8,14 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
+import 'bootstrap';
+// console.log("You are in application.js file")
+document.addEventListener("turbolinks:load", ()=>{
+    // console.log("Javascript is ready")
+    // alert("Javascript is ready")
+})
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
