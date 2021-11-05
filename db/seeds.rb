@@ -10,12 +10,19 @@
 Post.delete_all
 Category.delete_all
 User.delete_all
+Tagging.delete_all
+Tag.delete_all
 
 Category.create(name: "Programming")
 Category.create(name: "Web Dev")
 Category.create(name: "Ruby on Rails")
 Category.create(name: "React")
 Category.create(name: "Angular")
+
+javascript = Tag.create(name: "javascript")
+node = Tag.create(name: "node")
+ruby = Tag.create(name: "ruby")
+react = Tag.create(name: "react")
 
 admin_user = User.create(
     email: "kuldeep.yadav@idfy.com",
@@ -41,7 +48,7 @@ Category.all.each do |category|
         #tag = Tag.offset(tag_offset).first
         Post.create(title: "Post #{i}",
             description: "Post details #{i}", category: category,
-            # tags: i % 2 == 0 ? ["javascript", "react"] : ["ruby", "node"],
+            tags: i % 2 == 0 ? [javascript, react] : [ruby, node],
             # user: admin_user
         )
     end

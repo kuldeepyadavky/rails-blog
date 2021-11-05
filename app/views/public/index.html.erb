@@ -7,7 +7,11 @@
         <p class="text-warning">
             <%= post.category.name %>
         </p> 
+        <% post.tags.each do |t|%>
+        <p class='text-danger'><%=t.name%></p>
+        <%end%>
     </div> 
 </div>
+<hr/>
 <%end%>
 </div>

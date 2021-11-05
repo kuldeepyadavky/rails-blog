@@ -26,6 +26,11 @@
     <%= form.text_area :description %>
   </div>
 
+    <div class="field"> 
+    <%= form.text_field :all_tags,
+    placeholder: "Tags separated with comma"%>
+  </div>
+
   <div class="field">
     <%= form.label :published %>
     <%= form.check_box :published %>

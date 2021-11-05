@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'New Post', new_post_path %>
+<br>
+
 
 <h1>Posts</h1>
 
@@ -8,6 +11,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Category</th>
+      <th>Tags</th>
       <th>Published</th>
       <th colspan="3"></th>
     </tr>
@@ -19,6 +23,7 @@
         <td><%= post.title %></td>
         <td><%= post.description %></td>
         <td><%= post.category.name%></td>
+        <td><%= post.all_tags%></td>
         <td><%= post.published %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -28,6 +33,4 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Post', new_post_path %>
