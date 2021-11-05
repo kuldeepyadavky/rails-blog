@@ -35,10 +35,14 @@
     :id, :name,{include_blank: false}, {:multiple => true}%>
   </div>
 
-  <div class="field">
+  <%
+=begin%>
+ <div class="field">
     <%= form.collection_check_boxes :tag_ids, Tag.all,
     :id, :name,{include_blank: true}%>
-  </div>
+  </div> 
+<%
+=end%>
 
   <div class="field">
     <%= form.label :published %>
