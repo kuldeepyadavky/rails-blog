@@ -32,7 +32,7 @@
   </div>
   <div class="field">
     <%= form.collection_select :tag_ids, Tag.all,
-    :id, :name,{include_blank: true}, {:multiple => true}%>
+    :id, :name,{include_blank: false}, {:multiple => true}%>
   </div>
 
   <div class="field">
