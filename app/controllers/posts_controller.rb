@@ -3,7 +3,10 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.includes(:category).page(params[:page]).per(10)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result().page(params[:page]).per(10) #SIMPLE SEARCH
+    
+    # @posts = Post.includes(:category).page(params[:page]).per(10)
     # @posts_published = Post.published
     # @posts_unpublished = Post.unpublished
     # @top_5 = Post.limit_5
