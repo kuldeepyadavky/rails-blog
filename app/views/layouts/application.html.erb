@@ -13,6 +13,15 @@
   <body>
   
   <div class="container">
+
+  <div>
+    <%= link_to "Home", root_url%>
+    <%= link_to "Posts", posts_path%>
+    <%= link_to "Categories", categories_path%>
+  </div>
+
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <% if user_signed_in?  %>

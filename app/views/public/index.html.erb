@@ -1,2 +1,8 @@
-<h1>Public#index</h1>
-<p>Find me in app/views/public/index.html.erb</p>
+<% @posts.each do |post|%>
+    <div class='row'>
+        <div class='col-sm-2'>
+        <h2><%= post.title %></h2>
+        <%= simple_format post.description %>
+        </div>
+    </div>
+<%end%>
