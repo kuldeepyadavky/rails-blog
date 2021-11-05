@@ -16,6 +16,12 @@ document.addEventListener("turbolinks:load", ()=>{
     // alert("Javascript is ready")
 })
 
+require("trix")
+require("@rails/actiontext")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("trix")
+require("@rails/actiontext")

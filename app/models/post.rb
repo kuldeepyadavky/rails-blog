@@ -7,9 +7,12 @@ class Post < ApplicationRecord
     # scope :published, lambda {where(published: true)}
     # scope :unpublished, -> {where(published: false)}
     # scope :limit_5, -> {limit(5)}
+    # scope :order_by_latest_first, -> {order(created_at: :desc)}
 
-    scope :order_by_latest_first, -> {order(created_at: :desc)}
+    #lets create and action text
+    has_rich_text :description
 
+    #tag ids
     def all_tags=(names)
         if names.blank?
             return

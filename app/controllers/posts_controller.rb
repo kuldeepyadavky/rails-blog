@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result().page(params[:page]).per(10) #SIMPLE SEARCH
+    @posts = @q.result().page(params[:page]).per(10)#SIMPLE SEARCH
     
     # @posts = Post.includes(:category).page(params[:page]).per(10)
     # @posts_published = Post.published
