@@ -3,12 +3,12 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.includes(:category).all
-    @posts_published = Post.published
-    @posts_unpublished = Post.unpublished
-    @top_5 = Post.limit_5
-    @latest_posts = Post.order_by_latest_first
-    @all_combined = Post.published.order_by_latest_first.limit_5
+    @posts = Post.includes(:category).page(params[:page]).per(10)
+    # @posts_published = Post.published
+    # @posts_unpublished = Post.unpublished
+    # @top_5 = Post.limit_5
+    # @latest_posts = Post.order_by_latest_first
+    # @all_combined = Post.published.order_by_latest_first.limit_5
 
   end
 

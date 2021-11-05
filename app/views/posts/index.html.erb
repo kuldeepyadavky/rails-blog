@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
+
 <%= link_to 'New Post', new_post_path %>
-<br>
-
-
-<%= @posts_published.all.size %>
-<%= @top_5.all.size %>
-<%= @posts_unpublished.all.size %>
-<%= @all_combined.all.size %>
+<br/>
 
 <h1>Posts</h1>
+
+<%= paginate @posts %>
+
+<%
+=begin%>
+ <%= @posts_published.all.size %>
+<%= @top_5.all.size %>
+<%= @posts_unpublished.all.size %>
+<%= @all_combined.all.size %> 
+<%
+=end%>
+
 
 <table>
   <thead>
