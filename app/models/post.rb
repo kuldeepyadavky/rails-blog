@@ -27,4 +27,8 @@ class Post < ApplicationRecord
     def all_tags
         tags.map(&:name).join(', ')
     end
+
+    def post_body
+        self.description.body
+    end
 end

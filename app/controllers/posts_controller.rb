@@ -22,6 +22,21 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    # render json: @post #in absence of jbuilder
+
+    # render json: @post.as_json(
+    #   only: [:id, :title]
+    #  include: [:category, {tags: {only: [:name]}}]
+    # )
+
+    # respond_to do |format|
+    #   format.html
+    #   format.json{render json: @post.as_json(
+    #     only: [:id, :title],
+    #     methods: :post_body,
+    #     include: [:category, {tags: {only: [:name]}}]
+    #   )}
+    # end
   end
 
   # GET /posts/new

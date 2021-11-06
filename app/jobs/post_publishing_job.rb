@@ -19,7 +19,7 @@ class PostPublishingJob < ApplicationJob
 
   post.save
 
-  sleep 3
+  sleep 1
 
   end
 end
