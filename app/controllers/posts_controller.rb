@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
+  def process_post
+    PostPublishingJob.perform_later
+    render plain: "Delayed job"
+  end
+
   # GET /posts or /posts.json
   def index
     @q = Post.ransack(params[:q])

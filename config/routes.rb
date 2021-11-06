@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+  get 'posts/process_post', as: 'process_post'
+
   get "public/tags/:tag", to: "public#tags", :as => :tag_search
 
   resources :tags
@@ -12,6 +16,8 @@ Rails.application.routes.draw do
     #resources :post
     get '/posts', to: 'posts#index'
   end
+
+
 
   root to: "public#index"  #adding a redirect route
 end
